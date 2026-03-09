@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Reset hlasování{% endblock %}
+
+{% block content %}
+<div class="card card-narrow">
+    <p class="page-label">Správa</p>
+    <h2>Reset hlasování</h2>
+
+    <div class="reset-warning">
+        Tato akce je nevratná. Všechny hlasy budou trvale smazány.
+    </div>
+
+    <form method="POST" action="{{ url_for('reset') }}">
+        <div class="form-group">
+            <label for="token">Resetovací token</label>
+            <input
+                type="password"
+                id="token"
+                name="token"
+                placeholder="Zadej token..."
+                autocomplete="off"
+                required
+            >
+        </div>
+        <button type="submit" class="btn btn-danger">Smazat všechny hlasy</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Výsledky – Záložky{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="results-header">
+        <div>
+            <p class="page-label">Výsledky</p>
+            <h2>Jak to dopadlo?</h2>
+        </div>
+        <div class="total-badge">Celkem hlasů: <span>{{ total }}</span></div>
+    </div>
+
+    <div class="results">
+        {% for cid, label in choices.items() %}
+        <div class="result-row">
+            <div class="result-meta">
+                <span class="result-label">{{ label }}</span>
+                <span class="result-stats">
+                    <strong>{{ percentages[cid] }}%</strong> &nbsp;·&nbsp; {{ results[cid] }} hlasů
+                </span>
+            </div>
+            <div class="result-bar-wrap">
+                <div class="result-bar" style="width: {{ percentages[cid]|string|replace(',', '.') }}%;"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">← Hlasovat znovu</a>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Hlasování – Záložky{% endblock %}
+
+{% block content %}
+<div class="card">
+    <p class="page-label">Anketa</p>
+    <h2>Kolik otevřených záložek je ještě normální?</h2>
+    <p class="subtitle">Vyber jednu možnost a odešli svůj hlas. Výsledky jsou sdílené se všemi.</p>
+
+    <form method="POST" action="{{ url_for('index') }}">
+        <div class="choices">
+            {% for cid, label in choices.items() %}
+            <label class="choice-label">
+                <input type="radio" name="choice" value="{{ cid }}">
+                <span>{{ label }}</span>
+            </label>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Odeslat hlas →</button>
+    </form>
+
+    <p class="hint">Po odeslání se zobrazí aktuální výsledky.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}O anketě{% endblock %}
+
+{% block content %}
+<div class="card card-narrow">
+    <p class="page-label">Info</p>
+    <h2>O této anketě</h2>
+
+    <p>
+        Školní projekt zaměřený na tvorbu jednoduché hlasovací aplikace
+        s trvalým ukládáním dat a sdílenými výsledky mezi všemi uživateli.
+    </p>
+
+    <h3>Co aplikace umí</h3>
+    <div>
+        <div class="about-item"><span class="icon"></span> Hlasování s uložením do databáze</div>
+        <div class="about-item"><span class="icon"></span> Sdílené výsledky v reálném čase</div>
+        <div class="about-item"><span class="icon"></span> Reset chráněný tokenem</div>
+        <div class="about-item"><span class="icon"></span> Data přežijí reload i restart serveru</div>
+    </div>
+
+    <h3>Technologie</h3>
+    <div>
+        <div class="about-item"><span class="icon"></span> <strong>Backend:</strong> Python 3 + Flask</div>
+        <div class="about-item"><span class="icon"></span> <strong>Databáze:</strong> SQLite</div>
+        <div class="about-item"><span class="icon"></span> <strong>Hosting:</strong> PythonAnywhere</div>
+        <div class="about-item"><span class="icon"></span> <strong>Frontend:</strong> HTML + CSS, žádný JavaScript</div>
+    </div>
+
+    <div class="contact-box">
+        Chyby hlás na: <a href="mailto:tom.bur.x123@email.cz">tom.bur.x123@email.cz</a>
+    </div>
+</div>
+{% endblock %}
